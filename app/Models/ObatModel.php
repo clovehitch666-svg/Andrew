@@ -6,16 +6,22 @@ use CodeIgniter\Model;
 
 class ObatModel extends Model
 {
-
     protected $table = 'obat';
+
     protected $primaryKey = 'id';
 
-    protected $allowedFields = [
-        'nama_obat',
-        'jenis_obat',
-        'harga_beli',
-        'harga_jual',
-        'stok'
-    ];
+    protected $returnType = 'array';
 
+   protected $allowedFields = [
+    'rak',
+    'nama_obat',
+    'jenis_obat',
+    'kategori',
+    'harga_beli',
+    'harga_jual',
+    'stok',
+    'expired_date',
+    'satuan',
+    'stok_minimum'
+];
 }

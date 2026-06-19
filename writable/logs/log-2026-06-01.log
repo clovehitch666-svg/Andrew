@@ -1,0 +1,116 @@
+CRITICAL - 2026-06-01 17:30:52 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:53 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:53 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:53 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:53 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:54 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:55 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:55 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 17:30:55 --> ErrorException: Access level to App\Models\ObatModel::$pager must be public (as in class CodeIgniter\BaseModel)
+[Method: GET, Route: obat]
+in APPPATH\Models\ObatModel.php on line 7.
+ 1 [internal function]: CodeIgniter\Debug\Exceptions->shutdownHandler()
+CRITICAL - 2026-06-01 18:11:06 --> Error: Call to undefined method CodeIgniter\Pager\Pager::hasPrevious()
+[Method: GET, Route: laporan]
+in APPPATH\Views\laporan\index.php on line 109.
+ 1 SYSTEMPATH\View\View.php(238): include()
+ 2 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('laporan/index', [], true)
+ 4 APPPATH\Controllers\Laporan.php(16): view('laporan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Laporan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\apotek\\public\\index.php')
+CRITICAL - 2026-06-01 18:11:08 --> Error: Call to undefined method CodeIgniter\Pager\Pager::hasPrevious()
+[Method: GET, Route: laporan]
+in APPPATH\Views\laporan\index.php on line 109.
+ 1 SYSTEMPATH\View\View.php(238): include()
+ 2 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('laporan/index', [], true)
+ 4 APPPATH\Controllers\Laporan.php(16): view('laporan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Laporan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\apotek\\public\\index.php')
+CRITICAL - 2026-06-01 18:11:09 --> Error: Call to undefined method CodeIgniter\Pager\Pager::hasPrevious()
+[Method: GET, Route: laporan]
+in APPPATH\Views\laporan\index.php on line 109.
+ 1 SYSTEMPATH\View\View.php(238): include()
+ 2 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('laporan/index', [], true)
+ 4 APPPATH\Controllers\Laporan.php(16): view('laporan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Laporan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\apotek\\public\\index.php')
+CRITICAL - 2026-06-01 18:11:10 --> Error: Call to undefined method CodeIgniter\Pager\Pager::hasPrevious()
+[Method: GET, Route: laporan]
+in APPPATH\Views\laporan\index.php on line 109.
+ 1 SYSTEMPATH\View\View.php(238): include()
+ 2 SYSTEMPATH\View\View.php(241): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 3 SYSTEMPATH\Common.php(1250): CodeIgniter\View\View->render('laporan/index', [], true)
+ 4 APPPATH\Controllers\Laporan.php(16): view('laporan/index', [...])
+ 5 SYSTEMPATH\CodeIgniter.php(951): App\Controllers\Laporan->index()
+ 6 SYSTEMPATH\CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Laporan))
+ 7 SYSTEMPATH\CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 8 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+10 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+11 SYSTEMPATH\rewrite.php(44): require_once('D:\\XAMPP\\htdocs\\apotek\\public\\index.php')
