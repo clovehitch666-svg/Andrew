@@ -525,3 +525,68 @@ DEBUG - 2026-06-23 17:26:18 --> Session: Class initialized using 'CodeIgniter\Se
 DEBUG - 2026-06-23 17:26:31 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-06-23 17:26:32 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
 DEBUG - 2026-06-23 17:26:50 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+ERROR - 2026-06-23 18:14:45 --> Error connecting to the database: ErrorException: mysqli::real_connect(): php_network_getaddresses: getaddrinfo for db failed: Temporary failure in name resolution in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 [internal function]: CodeIgniter\Debug\Exceptions->errorHandler()
+#1 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#4 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1678): CodeIgniter\Database\BaseConnection->query()
+#5 /home/zamie/Coding/Andrew/system/Model.php(756): CodeIgniter\Database\BaseBuilder->countAll()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Dashboard.php(13): CodeIgniter\Model->__call()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Dashboard->index()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next mysqli_sql_exception: php_network_getaddresses: getaddrinfo for db failed: Temporary failure in name resolution in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1678): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(756): CodeIgniter\Database\BaseBuilder->countAll()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Dashboard.php(13): CodeIgniter\Model->__call()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Dashboard->index()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: php_network_getaddresses: getaddrinfo for db failed: Temporary failure in name resolution in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1678): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(756): CodeIgniter\Database\BaseBuilder->countAll()
+#4 /home/zamie/Coding/Andrew/app/Controllers/Dashboard.php(13): CodeIgniter\Model->__call()
+#5 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Dashboard->index()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#8 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#10 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#11 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#12 {main}
+CRITICAL - 2026-06-23 18:14:45 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: php_network_getaddresses: getaddrinfo for db failed: Temporary failure in name resolution
+[Method: GET, Route: dashboard]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1678): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(756): CodeIgniter\Database\BaseBuilder->countAll()
+ 4 APPPATH/Controllers/Dashboard.php(13): CodeIgniter\Model->__call()
+ 5 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Dashboard->index()
+ 6 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 7 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 8 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+ 9 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+10 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+11 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')

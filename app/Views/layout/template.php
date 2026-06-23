@@ -292,10 +292,11 @@ button:hover{
             📖 Laporan
         </a>
 
-        <?php if (session()->get('role') === 'admin'): ?>
         <a href="/expired">
             📅 Laporan Expired
         </a>
+
+        <?php if (session()->get('role') === 'admin'): ?>
         <a href="/logactivity">
             📜 Log Activity
         </a>

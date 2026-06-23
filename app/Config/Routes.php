@@ -58,7 +58,9 @@ $routes->get('/stokopname/download', 'StokOpname::download');
 */
 
 $routes->get('/rekap', function () {
-    return view('rekap/index');
+    $model = new \App\Models\ObatModel();
+    $data['obat'] = $model->orderBy('nama_obat', 'ASC')->findAll();
+    return view('rekap/index', $data);
 });
 $routes->get('/rekap/download', function () {
     if (session()->get('role') !== 'admin') {
