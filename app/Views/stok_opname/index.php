@@ -78,9 +78,23 @@
     font-weight:bold;
 }
 
-.nav-right a{
-    text-decoration:none;
-    color:black;
+@media print {
+    .sidebar, .header, .custom-nav, .btn-simpan, .no-print, button {
+        display: none !important;
+    }
+    .content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    body {
+        background: white !important;
+    }
+    .input-stok {
+        border: none !important;
+        outline: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
 }
 
 </style>
@@ -89,8 +103,14 @@
     LAPORAN STOK OPNAME - APOTEK BARAYA
 </div>
 
-<div class="periode">
-    Periode: <?= date('F Y') ?>
+<div class="periode" style="display: flex; justify-content: space-between; align-items: center;">
+    <span>Periode: <?= date('F Y') ?></span>
+    <?php if (session()->get('role') === 'admin'): ?>
+        <div class="no-print" style="display: flex; gap: 10px;">
+            <button onclick="window.print()" style="padding: 10px 15px; background: #1f76be; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">🖨️ Cetak Laporan</button>
+            <a href="/stokopname/download" class="btn" style="background: #28a745; line-height: 22px; font-weight: bold;">📥 Unduh Excel/CSV</a>
+        </div>
+    <?php endif; ?>
 </div>
 
 <?php if(session()->getFlashdata('success')): ?>

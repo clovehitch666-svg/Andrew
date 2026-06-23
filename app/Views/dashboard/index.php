@@ -64,6 +64,10 @@
     background:#59c36a;
 }
 
+.orange{
+    background:#d94e34;
+}
+
 .welcome-box{
     background:white;
     padding:25px;
@@ -115,11 +119,25 @@
 
     </div>
 
+    <a href="/expired" style="text-decoration: none; color: inherit; display: flex; flex: 1; min-width: 250px;">
+        <div class="card orange" style="flex: 1; min-width: 100%;">
+
+            <span><?= $totalExpired ?></span>
+
+            <h2>Barang Expired</h2>
+
+            <div class="card-icon">
+                📅
+            </div>
+
+        </div>
+    </a>
+
 </div>
 
 <div class="welcome-box">
 
-    <h2>Selamat Datang</h2>
+    <h2>Selamat Datang, <?= session()->get('nama') ?? 'User' ?> (<?= ucfirst(session()->get('role') ?? 'Guest') ?>)</h2>
 
     <br>
 

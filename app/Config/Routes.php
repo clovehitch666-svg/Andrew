@@ -49,6 +49,7 @@ $routes->get('/obat/hapus/(:num)', 'Obat::hapus/$1');
 
 $routes->get('/stokopname', 'StokOpname::index');
 $routes->post('/stokopname/simpan', 'StokOpname::simpan');
+$routes->get('/stokopname/download', 'StokOpname::download');
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,29 @@ $routes->post('/stokopname/simpan', 'StokOpname::simpan');
 
 $routes->get('/rekap', function () {
     return view('rekap/index');
+});
+$routes->get('/rekap/download', function () {
+    if (session()->get('role') !== 'admin') {
+        return redirect()->to('/rekap');
+    }
+    $model = new \App\Models\ObatModel();
+    $obat = $model->findAll();
+    header('Content-Type: text/csv; charset=utf-8');
+    header('Content-Disposition: attachment; filename=rekap_stok_' . date('Y-m-d') . '.csv');
+    $output = fopen('php://output', 'w');
+    fputcsv($output, ['No', 'Nama Obat', 'Stok', 'Status']);
+    $no = 1;
+    foreach ($obat as $o) {
+        $status = ($o['stok'] <= $o['stok_minimum']) ? 'Menipis' : 'Aman';
+        fputcsv($output, [
+            $no++,
+            $o['nama_obat'],
+            $o['stok'],
+            $status
+        ]);
+    }
+    fclose($output);
+    exit;
 });
 
 /*
@@ -76,3 +100,8 @@ $routes->get('/fefo', 'Fefo::index');
 
 $routes->get('/laporan', 'Laporan::index');
 $routes->get('/laporan/stok', 'Laporan::stok');
+$routes->get('/laporan/download', 'Laporan::download');
+$routes->get('/logactivity', 'LogActivity::index');
+$routes->get('/expired', 'Expired::index');
+$routes->get('/expired/print', 'Expired::printReport');
+$routes->get('/expired/download', 'Expired::download');

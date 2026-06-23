@@ -39,13 +39,31 @@
 .title{
     font-size:28px;
     font-weight:bold;
-    margin-bottom:20px;
+}
+
+@media print {
+    .sidebar, .header, .custom-nav, .no-print, button {
+        display: none !important;
+    }
+    .content {
+        margin-left: 0 !important;
+        padding: 0 !important;
+    }
+    body {
+        background: white !important;
+    }
 }
 
 </style>
 
-<div class="title">
-    Laporan Data Obat
+<div class="title" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px;">
+    <span>Laporan Data Obat</span>
+    <?php if (session()->get('role') === 'admin'): ?>
+        <div class="no-print" style="display: flex; gap: 10px;">
+            <button onclick="window.print()" style="padding: 10px 15px; background: #1f76be; color: white; border: none; border-radius: 4px; cursor: pointer; font-weight: bold; font-size: 14px;">🖨️ Cetak Laporan</button>
+            <a href="/laporan/download" class="btn" style="background: #28a745; line-height: 22px; font-weight: bold; font-size: 14px;">📥 Unduh Excel/CSV</a>
+        </div>
+    <?php endif; ?>
 </div>
 
 <?php

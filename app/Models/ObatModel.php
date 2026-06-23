@@ -22,6 +22,7 @@ class ObatModel extends Model
     'stok',
     'expired_date',
     'satuan',
-    'stok_minimum'
+    'stok_minimum',
+    'no_batch'
 ];
 }

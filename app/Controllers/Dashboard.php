@@ -22,6 +22,11 @@ class Dashboard extends BaseController
 
         $data['totalStok'] = $stok['stok'] ?? 0;
 
+        $data['totalExpired'] = $obatModel
+            ->where('expired_date IS NOT NULL')
+            ->where('expired_date <=', date('Y-m-d'))
+            ->countAllResults();
+
         return view('dashboard/index', $data);
     }
 }

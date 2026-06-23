@@ -21,7 +21,12 @@ class Auth extends BaseController
 
         if($user){
             if($password == $user['password']){
-                session()->set('login',true);
+                session()->set([
+                    'login'    => true,
+                    'username' => $user['username'],
+                    'nama'     => $user['nama'],
+                    'role'     => $user['role']
+                ]);
                 return redirect()->to('/dashboard');
             }
         }

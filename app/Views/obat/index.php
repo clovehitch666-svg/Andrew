@@ -209,6 +209,7 @@ $no = 1 + (($page - 1) * $perPage);
 <tr>
     <th width="50">NO</th>
     <th width="70">RAK</th>
+    <th>NO BATCH</th>
     <th>NAMA OBAT</th>
     <th>JENIS</th>
     <th>KATEGORI</th>
@@ -228,6 +229,8 @@ $no = 1 + (($page - 1) * $perPage);
 <td><?= $no++ ?></td>
 
 <td><?= $o['rak'] ?? '-' ?></td>
+
+<td><?= esc($o['no_batch'] ?: '-') ?></td>
 
 <td><?= $o['nama_obat'] ?></td>
 

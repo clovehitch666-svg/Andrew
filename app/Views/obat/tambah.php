@@ -29,6 +29,25 @@
     border-radius:4px;
 }
 
+.input-group {
+    display: flex;
+    align-items: center;
+}
+
+.input-group-text {
+    background: #e9ecef;
+    border: 1px solid #ccc;
+    border-right: none;
+    padding: 10px 15px;
+    border-radius: 4px 0 0 4px;
+    font-weight: bold;
+    color: #495057;
+}
+
+.input-group input {
+    border-radius: 0 4px 4px 0 !important;
+}
+
 .btn-simpan{
     background:#28a745;
     color:white;
@@ -55,6 +74,11 @@
 <form action="/obat/simpan" method="post">
 
     <div class="form-group">
+        <label>No Batch</label>
+        <input type="text" name="no_batch" placeholder="Masukkan Nomor Batch (contoh: BCH1029)" required>
+    </div>
+
+    <div class="form-group">
         <label>Rak</label>
         <input type="text" name="rak" required>
     </div>
@@ -76,12 +100,18 @@
 
     <div class="form-group">
         <label>Harga Beli</label>
-        <input type="number" name="harga_beli" required>
+        <div class="input-group">
+            <span class="input-group-text">Rp.</span>
+            <input type="text" name="harga_beli" class="rupiah-input" required>
+        </div>
     </div>
 
     <div class="form-group">
         <label>Harga Jual</label>
-        <input type="number" name="harga_jual" required>
+        <div class="input-group">
+            <span class="input-group-text">Rp.</span>
+            <input type="text" name="harga_jual" class="rupiah-input" required>
+        </div>
     </div>
 
     <div class="form-group">
@@ -125,5 +155,28 @@
 </form>
 
 </div>
+
+<script>
+function formatRupiah(angka) {
+    var number_string = angka.replace(/[^,\d]/g, '').toString(),
+        split = number_string.split(','),
+        sisa = split[0].length % 3,
+        rupiah = split[0].substr(0, sisa),
+        ribuan = split[0].substr(sisa).match(/\d{3}/gi);
+
+    if (ribuan) {
+        var separator = sisa ? '.' : '';
+        rupiah += separator + ribuan.join('.');
+    }
+
+    return rupiah;
+}
+
+document.querySelectorAll('.rupiah-input').forEach(input => {
+    input.addEventListener('keyup', function(e) {
+        this.value = formatRupiah(this.value);
+    });
+});
+</script>
 
 <?= $this->endSection() ?>
