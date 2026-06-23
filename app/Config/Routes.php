@@ -58,28 +58,52 @@ $routes->get('/stokopname/download', 'StokOpname::download');
 */
 
 $routes->get('/rekap', function () {
-    $model = new \App\Models\ObatModel();
-    $data['obat'] = $model->orderBy('nama_obat', 'ASC')->findAll();
+    $db = \Config\Database::connect();
+    $query = $db->query("
+        SELECT 
+            o.*,
+            (SELECT COALESCE(SUM(jumlah), 0) FROM obat_masuk WHERE obat_id = o.id) AS jumlah_masuk,
+            (SELECT COALESCE(SUM(jumlah), 0) FROM detail_penjualan WHERE obat_id = o.id) AS jumlah_keluar
+        FROM obat o
+        ORDER BY o.nama_obat ASC
+    ");
+    $data['obat'] = $query->getResultArray();
     return view('rekap/index', $data);
 });
 $routes->get('/rekap/download', function () {
     if (session()->get('role') !== 'admin') {
         return redirect()->to('/rekap');
     }
-    $model = new \App\Models\ObatModel();
-    $obat = $model->findAll();
+    $db = \Config\Database::connect();
+    $query = $db->query("
+        SELECT 
+            o.*,
+            (SELECT COALESCE(SUM(jumlah), 0) FROM obat_masuk WHERE obat_id = o.id) AS jumlah_masuk,
+            (SELECT COALESCE(SUM(jumlah), 0) FROM detail_penjualan WHERE obat_id = o.id) AS jumlah_keluar
+        FROM obat o
+        ORDER BY o.nama_obat ASC
+    ");
+    $obat = $query->getResultArray();
+    
     header('Content-Type: text/csv; charset=utf-8');
     header('Content-Disposition: attachment; filename=rekap_stok_' . date('Y-m-d') . '.csv');
     $output = fopen('php://output', 'w');
-    fputcsv($output, ['No', 'Nama Obat', 'Stok', 'Status']);
+    fputcsv($output, ['No', 'Nama Obat', 'Rak', 'Stok Awal', 'Stok Akhir', 'Jumlah Masuk', 'Jumlah Keluar', 'Satuan', 'Exp. Date']);
+    
     $no = 1;
     foreach ($obat as $o) {
-        $status = ($o['stok'] <= $o['stok_minimum']) ? 'Menipis' : 'Aman';
+        $stokAkhir = $o['stok'];
+        $stokAwal = $stokAkhir - $o['jumlah_masuk'] + $o['jumlah_keluar'];
         fputcsv($output, [
             $no++,
             $o['nama_obat'],
-            $o['stok'],
-            $status
+            $o['rak'] ?? '-',
+            $stokAwal,
+            $stokAkhir,
+            $o['jumlah_masuk'],
+            $o['jumlah_keluar'],
+            $o['satuan'] ?? '-',
+            $o['expired_date'] ?? '-'
         ]);
     }
     fclose($output);

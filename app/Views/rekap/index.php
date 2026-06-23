@@ -62,43 +62,42 @@
     <table>
         <thead>
             <tr>
-                <th style="width: 60px;">No</th>
-                <th>No Batch</th>
+                <th style="width: 60px;">NO</th>
                 <th>Nama Obat</th>
-                <th>Kategori</th>
+                <th>Rak</th>
+                <th>Stok Awal</th>
+                <th>Stok Akhir</th>
+                <th>Jumlah masuk</th>
+                <th>Jumlah Keluar</th>
                 <th>Satuan</th>
-                <th>Stok Saat Ini</th>
-                <th>Stok Minimum</th>
-                <th>Status</th>
+                <th>Exp. Date</th>
             </tr>
         </thead>
         <tbody>
             <?php if (empty($obat)): ?>
                 <tr>
-                    <td colspan="8">Tidak ada data obat.</td>
+                    <td colspan="9">Tidak ada data obat.</td>
                 </tr>
             <?php else: ?>
                 <?php 
                 $no = 1;
                 foreach ($obat as $o): 
-                    $isMenipis = $o['stok'] <= $o['stok_minimum'];
+                    $stokAkhir = $o['stok'];
+                    $stokAwal = $stokAkhir - $o['jumlah_masuk'] + $o['jumlah_keluar'];
                 ?>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= esc($o['no_batch'] ?: '-') ?></td>
                         <td style="text-align: left; padding-left: 15px;"><strong><?= esc($o['nama_obat']) ?></strong></td>
-                        <td><?= esc($o['kategori'] ?: '-') ?></td>
-                        <td><?= esc($o['satuan'] ?: '-') ?></td>
-                        <td style="font-weight: bold; color: <?= $isMenipis ? 'red' : 'inherit' ?>;">
-                            <?= esc($o['stok']) ?>
+                        <td><?= esc($o['rak'] ?: '-') ?></td>
+                        <td><?= esc($stokAwal) ?></td>
+                        <td style="font-weight: bold; color: <?= ($stokAkhir <= $o['stok_minimum']) ? 'red' : 'inherit' ?>;">
+                            <?= esc($stokAkhir) ?>
                         </td>
-                        <td><?= esc($o['stok_minimum']) ?></td>
-                        <td>
-                            <?php if ($isMenipis): ?>
-                                <span class="badge-menipis">Menipis</span>
-                            <?php else: ?>
-                                <span class="badge-aman">Aman</span>
-                            <?php endif; ?>
+                        <td><?= esc($o['jumlah_masuk']) ?></td>
+                        <td><?= esc($o['jumlah_keluar']) ?></td>
+                        <td><?= esc($o['satuan'] ?: '-') ?></td>
+                        <td style="font-weight: bold;">
+                            <?= $o['expired_date'] ? date('d/m/Y', strtotime($o['expired_date'])) : '-' ?>
                         </td>
                     </tr>
                 <?php endforeach; ?>
