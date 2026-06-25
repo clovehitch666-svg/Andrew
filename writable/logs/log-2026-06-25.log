@@ -1,0 +1,308 @@
+ERROR - 2026-06-25 17:01:43 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-06-25 17:01:43 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.20.0.1' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')
+ERROR - 2026-06-25 17:01:48 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-06-25 17:01:48 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.20.0.1' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')
+ERROR - 2026-06-25 17:03:30 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-06-25 17:03:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.20.0.1' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')
+ERROR - 2026-06-25 17:04:07 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-06-25 17:04:07 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.20.0.1' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')
+ERROR - 2026-06-25 17:04:12 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-06-25 17:04:12 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.20.0.1' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')
+ERROR - 2026-06-25 17:04:30 --> Error connecting to the database: mysqli_sql_exception: Access denied for user 'root'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:201
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php(201): mysqli->real_connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#3 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#4 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#5 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#6 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#9 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#12 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#13 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#14 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Access denied for user '****'@'172.20.0.1' (using password: NO) in /home/zamie/Coding/Andrew/system/Database/MySQLi/Connection.php:231
+Stack trace:
+#0 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(419): CodeIgniter\Database\MySQLi\Connection->connect()
+#1 /home/zamie/Coding/Andrew/system/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+#2 /home/zamie/Coding/Andrew/system/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+#3 /home/zamie/Coding/Andrew/system/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+#4 /home/zamie/Coding/Andrew/system/BaseModel.php(713): CodeIgniter\Model->doFirst()
+#5 /home/zamie/Coding/Andrew/app/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+#6 /home/zamie/Coding/Andrew/system/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+#7 /home/zamie/Coding/Andrew/system/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+#8 /home/zamie/Coding/Andrew/system/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+#9 /home/zamie/Coding/Andrew/system/Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 /home/zamie/Coding/Andrew/system/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+#11 /home/zamie/Coding/Andrew/public/index.php(59): CodeIgniter\Boot::bootWeb()
+#12 /home/zamie/Coding/Andrew/system/rewrite.php(44): require_once('...')
+#13 {main}
+CRITICAL - 2026-06-25 17:04:30 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Access denied for user '****'@'172.20.0.1' (using password: NO)
+[Method: POST, Route: login]
+in SYSTEMPATH/Database/BaseConnection.php on line 465.
+ 1 SYSTEMPATH/Database/BaseConnection.php(654): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH/Database/BaseBuilder.php(1649): CodeIgniter\Database\BaseConnection->query()
+ 3 SYSTEMPATH/Model.php(296): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH/BaseModel.php(713): CodeIgniter\Model->doFirst()
+ 5 APPPATH/Controllers/Auth.php(20): CodeIgniter\BaseModel->first()
+ 6 SYSTEMPATH/CodeIgniter.php(951): App\Controllers\Auth->prosesLogin()
+ 7 SYSTEMPATH/CodeIgniter.php(497): CodeIgniter\CodeIgniter->runController()
+ 8 SYSTEMPATH/CodeIgniter.php(340): CodeIgniter\CodeIgniter->handleRequest()
+ 9 SYSTEMPATH/Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(68): CodeIgniter\Boot::runCodeIgniter()
+11 FCPATH/index.php(59): CodeIgniter\Boot::bootWeb()
+12 SYSTEMPATH/rewrite.php(44): require_once('/home/zamie/Coding/Andrew/public/index.php')
+DEBUG - 2026-06-25 17:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:07:33 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:08:17 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:08:18 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:08:20 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:14:12 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
+DEBUG - 2026-06-25 17:14:51 --> Session: Class initialized using 'CodeIgniter\Session\Handlers\FileHandler' driver.
