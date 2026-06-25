@@ -29,4 +29,24 @@ class Dashboard extends BaseController
 
         return view('dashboard/index', $data);
     }
+
+    public function getNotifications()
+    {
+        if (!session()->get('login')) {
+            return $this->response->setJSON(['status' => 'error', 'message' => 'Unauthorized'])->setStatusCode(401);
+        }
+
+        $obatModel = new ObatModel();
+        $expiredObat = $obatModel
+            ->where('expired_date IS NOT NULL')
+            ->where('expired_date <=', date('Y-m-d'))
+            ->orderBy('expired_date', 'ASC')
+            ->findAll();
+
+        return $this->response->setJSON([
+            'status' => 'success',
+            'count'  => count($expiredObat),
+            'data'   => $expiredObat
+        ]);
+    }
 }

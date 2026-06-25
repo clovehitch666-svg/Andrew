@@ -234,6 +234,132 @@ button:hover{
     margin-bottom:15px;
 }
 
+/* ================= NOTIFICATION ================= */
+
+.notification-container {
+    position: relative;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -10px;
+    background: #ef233c;
+    color: white;
+    font-size: 11px;
+    font-weight: bold;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #cfcfcf;
+}
+
+.notification-dropdown {
+    position: absolute;
+    top: 45px;
+    right: 0;
+    width: 320px;
+    max-height: 400px;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+    z-index: 1000;
+    display: none;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.notification-dropdown.active {
+    display: flex;
+}
+
+.dropdown-header {
+    background: #59c36a;
+    color: white;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.dropdown-body {
+    overflow-y: auto;
+    flex: 1;
+}
+
+.notification-item {
+    padding: 12px 16px;
+    border-bottom: 1px solid #f0f0f0;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    text-decoration: none;
+    color: inherit;
+    text-align: left;
+    line-height: 1.4;
+}
+
+.notification-item:hover {
+    background: #f8faf9;
+}
+
+.notification-item:last-child {
+    border-bottom: none;
+}
+
+.notification-item-title {
+    font-size: 13px;
+    font-weight: bold;
+    color: #2b2b2b;
+}
+
+.notification-item-desc {
+    font-size: 12px;
+    color: #ef233c;
+    font-weight: 500;
+}
+
+.notification-item-meta {
+    font-size: 11px;
+    color: #888;
+}
+
+.dropdown-empty {
+    padding: 30px;
+    text-align: center;
+    color: #888;
+    font-size: 13px;
+}
+
+.dropdown-footer {
+    padding: 10px;
+    text-align: center;
+    border-top: 1px solid #f0f0f0;
+    background: #fafafa;
+}
+
+.dropdown-footer a {
+    font-size: 12px;
+    color: #59c36a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.dropdown-footer a:hover {
+    text-decoration: underline;
+}
+
 /* ================= RESPONSIVE ================= */
 
 @media(max-width:768px){
@@ -322,7 +448,22 @@ button:hover{
 
     <div class="header-right">
 
-        <span>🔔</span>
+        <div class="notification-container" id="notifContainer">
+            <span style="font-size: 30px; line-height: 1;">🔔</span>
+            <span class="notification-badge" id="notifBadge" style="display: none;">0</span>
+            <div class="notification-dropdown" id="notifDropdown">
+                <div class="dropdown-header">
+                    <span>Notifikasi</span>
+                    <span id="notifCountText" style="font-size: 12px; font-weight: normal; background: rgba(0,0,0,0.15); padding: 2px 8px; border-radius: 10px;">0 Obat</span>
+                </div>
+                <div class="dropdown-body" id="notifList">
+                    <div class="dropdown-empty">Memuat...</div>
+                </div>
+                <div class="dropdown-footer">
+                    <a href="/expired">Lihat Semua Laporan Expired</a>
+                </div>
+            </div>
+        </div>
         <span>💬</span>
 
     </div>
@@ -334,6 +475,74 @@ button:hover{
     <?= $this->renderSection('content') ?>
 
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const notifContainer = document.getElementById('notifContainer');
+    const notifBadge = document.getElementById('notifBadge');
+    const notifDropdown = document.getElementById('notifDropdown');
+    const notifCountText = document.getElementById('notifCountText');
+    const notifList = document.getElementById('notifList');
+
+    // Fetch notifications
+    function fetchNotifications() {
+        fetch('/api/notifications')
+            .then(response => {
+                if (!response.ok) throw new Error('Network response was not ok');
+                return response.json();
+            })
+            .then(res => {
+                if (res.status === 'success') {
+                    const count = res.count;
+                    notifCountText.textContent = `${count} Obat`;
+                    
+                    if (count > 0) {
+                        notifBadge.textContent = count;
+                        notifBadge.style.display = 'flex';
+                        
+                        let html = '';
+                        res.data.forEach(item => {
+                            const expDate = new Date(item.expired_date);
+                            const formattedDate = expDate.toLocaleDateString('id-ID', { year: 'numeric', month: 'long', day: 'numeric' });
+                            
+                            html += `
+                                <a href="/expired" class="notification-item">
+                                    <div class="notification-item-title">💊 ${item.nama_obat}</div>
+                                    <div class="notification-item-desc">Sudah Kadaluarsa! (${formattedDate})</div>
+                                    <div class="notification-item-meta">Stok: ${item.stok} ${item.satuan || ''} | Batch: ${item.no_batch || '-'}</div>
+                                </a>
+                            `;
+                        });
+                        notifList.innerHTML = html;
+                    } else {
+                        notifBadge.style.display = 'none';
+                        notifList.innerHTML = '<div class="dropdown-empty">Tidak ada obat kadaluarsa 🎉</div>';
+                    }
+                }
+            })
+            .catch(err => {
+                console.error('Error fetching notifications:', err);
+                notifList.innerHTML = '<div class="dropdown-empty" style="color: #ef233c;">Gagal memuat notifikasi</div>';
+            });
+    }
+
+    // Load on init
+    fetchNotifications();
+
+    // Toggle dropdown
+    notifContainer.addEventListener('click', function(e) {
+        e.stopPropagation();
+        notifDropdown.classList.toggle('active');
+    });
+
+    // Close when clicking outside
+    document.addEventListener('click', function(e) {
+        if (!notifContainer.contains(e.target)) {
+            notifDropdown.classList.remove('active');
+        }
+    });
+});
+</script>
 
 </body>
 </html>

@@ -23,6 +23,7 @@ $routes->get('/logout', 'Auth::logout');
 */
 
 $routes->get('/dashboard', 'Dashboard::index');
+$routes->get('/api/notifications', 'Dashboard::getNotifications');
 
 /*
 |--------------------------------------------------------------------------
