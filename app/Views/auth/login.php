@@ -59,6 +59,7 @@ border-radius:10px;
 border:none;
 margin-top:5px;
 background:#eee;
+box-sizing:border-box;
 }
 
 /* BUTTON */
