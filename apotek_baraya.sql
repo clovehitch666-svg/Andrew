@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: db
--- Generation Time: Jun 23, 2026 at 05:25 PM
+-- Generation Time: Jun 26, 2026 at 06:03 PM
 -- Server version: 8.0.46
 -- PHP Version: 8.3.31
 
@@ -82,6 +82,27 @@ CREATE TABLE `obat` (
   `kategori` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `no_batch` varchar(100) COLLATE utf8mb4_general_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `obat`
+--
+
+INSERT INTO `obat` (`id`, `nama_obat`, `jenis_obat`, `harga_beli`, `harga_jual`, `stok`, `created_at`, `satuan`, `stok_minimum`, `rak`, `expired_date`, `kategori`, `no_batch`) VALUES
+(4, 'Paracetamol 500mg', 'Generik', 5000.00, 7500.00, 120, '2026-06-23 17:25:29', 'Tablet', 15, 'A1', '2027-12-15', 'Analgesik', 'BCH-PCT-001'),
+(5, 'Amoxicillin 500mg', 'Generik', 12000.00, 15000.00, 80, '2026-06-23 17:25:29', 'Tablet', 20, 'A2', '2027-08-10', 'Antibiotik', 'BCH-AMX-002'),
+(6, 'Mylanta Cair 150ml', 'Paten', 15000.00, 18500.00, 25, '2026-06-23 17:25:29', 'Botol', 5, 'B1', '2024-05-12', 'Antasida', 'BCH-MYL-003'),
+(7, 'Combantrin Jeruk 10ml', 'Paten', 16000.00, 19800.00, 3, '2026-06-23 17:25:29', 'Botol', 10, 'B2', '2026-09-24', 'Obat Cacing', 'BCH-COM-004'),
+(8, 'Panadol Extra', 'Paten', 8500.00, 11000.00, 150, '2026-06-23 17:25:29', 'Strip', 25, 'A1', '2026-05-01', 'Analgesik', 'BCH-PAN-005'),
+(9, 'Bodrex Sakit Kepala', 'Paten', 4000.00, 5500.00, 5, '2026-06-23 17:25:29', 'Strip', 15, 'A1', '2028-02-28', 'Analgesik', 'BCH-BOD-006'),
+(10, 'Loperamide 2mg', 'Generik', 3500.00, 5000.00, 200, '2026-06-23 17:25:29', 'Tablet', 30, 'C1', '2027-11-20', 'Antidiare', 'BCH-LOP-007'),
+(11, 'Betadine Antiseptic 15ml', 'Paten', 9500.00, 12500.00, 45, '2026-06-23 17:25:29', 'Botol', 10, 'D1', '2025-01-15', 'Antiseptik', 'BCH-BET-008'),
+(12, 'Decolgen Tablet', 'Paten', 5500.00, 7000.00, 60, '2026-06-23 17:25:29', 'Strip', 15, 'E1', '2026-06-01', 'Obat Flu', 'BCH-DEC-009'),
+(13, 'Sanmol Sirup 60ml', 'Paten', 12500.00, 16000.00, 18, '2026-06-23 17:25:29', 'Botol', 5, 'B1', '2027-04-10', 'Analgesik anak', 'BCH-SAN-010'),
+(14, 'Cefadroxil 500mg', 'Generik', 18000.00, 23000.00, 90, '2026-06-23 17:25:29', 'Kapsul', 20, 'A2', '2027-10-18', 'Antibiotik', 'BCH-CEF-011'),
+(15, 'Insto Eye Drops 7.5ml', 'Paten', 11000.00, 14500.00, 2, '2026-06-23 17:25:29', 'Botol', 8, 'D2', '2025-11-30', 'Obat Mata', 'BCH-INS-012'),
+(16, 'OBH Tropica 100ml', 'Paten', 13000.00, 16500.00, 35, '2026-06-23 17:25:29', 'Botol', 10, 'E1', '2026-06-15', 'Obat Batuk', 'BCH-OBH-013'),
+(17, 'Salbutamol 2mg', 'Generik', 6000.00, 8000.00, 110, '2026-06-23 17:25:29', 'Tablet', 20, 'C2', '2027-09-05', 'Asma', 'BCH-SAL-014'),
+(18, 'Voltaren Gel 20g', 'Paten', 38000.00, 48000.00, 14, '2026-06-23 17:25:29', 'Tube', 5, 'F1', '2025-08-22', 'Topikal Otot', 'BCH-VOL-015');
 
 -- --------------------------------------------------------
 
@@ -175,7 +196,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `nama`, `username`, `password`, `role`, `email`, `created_at`) VALUES
-(1, 'Pemilik Apotek', 'admin', 'admin123', 'admin', 'admin@example.com', '2026-03-10 17:56:12'),
+(1, 'Admin', 'admin', 'admin123', 'admin', NULL, '2026-03-10 17:56:12'),
 (2, 'Kasir', 'kasir', 'kasir123', 'kasir', NULL, '2026-03-10 17:56:12');
 
 --
@@ -256,7 +277,7 @@ ALTER TABLE `log_activity`
 -- AUTO_INCREMENT for table `obat`
 --
 ALTER TABLE `obat`
-  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT for table `obat_masuk`
