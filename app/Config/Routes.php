@@ -15,6 +15,9 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Auth::login');
 $routes->post('/login', 'Auth::prosesLogin');
 $routes->get('/logout', 'Auth::logout');
+$routes->get('/profil', 'Auth::profil');
+$routes->post('/profil/save', 'Auth::saveProfil');
+$routes->post('/profil/test-email', 'Auth::testEmail');
 
 /*
 |--------------------------------------------------------------------------
@@ -132,3 +135,16 @@ $routes->get('/logactivity', 'LogActivity::index');
 $routes->get('/expired', 'Expired::index');
 $routes->get('/expired/print', 'Expired::printReport');
 $routes->get('/expired/download', 'Expired::download');
+
+/*
+|--------------------------------------------------------------------------
+| KELOLA PENGGUNA (Admin Only)
+|--------------------------------------------------------------------------
+*/
+
+$routes->get('/pengguna', 'Pengguna::index');
+$routes->get('/pengguna/tambah', 'Pengguna::tambah');
+$routes->post('/pengguna/simpan', 'Pengguna::simpan');
+$routes->get('/pengguna/edit/(:num)', 'Pengguna::edit/$1');
+$routes->post('/pengguna/update/(:num)', 'Pengguna::update/$1');
+$routes->get('/pengguna/hapus/(:num)', 'Pengguna::hapus/$1');

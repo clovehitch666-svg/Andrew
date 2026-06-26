@@ -423,10 +423,17 @@ button:hover{
         </a>
 
         <?php if (session()->get('role') === 'admin'): ?>
+        <a href="/pengguna">
+            👥 Kelola Pengguna
+        </a>
         <a href="/logactivity">
             📜 Log Activity
         </a>
         <?php endif; ?>
+
+        <a href="/profil">
+            👤 Profil Saya
+        </a>
 
         <a href="/logout">
             🚪 Logout
@@ -464,7 +471,6 @@ button:hover{
                 </div>
             </div>
         </div>
-        <span>💬</span>
 
     </div>
 

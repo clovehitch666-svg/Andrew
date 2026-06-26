@@ -13,7 +13,8 @@ class UserModel extends Model
         'nama',
         'username',
         'password',
-        'role'
+        'role',
+        'email'
     ];
 
 }

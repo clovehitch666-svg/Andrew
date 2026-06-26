@@ -166,6 +166,7 @@ CREATE TABLE `users` (
   `username` varchar(50) COLLATE utf8mb4_general_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_general_ci NOT NULL,
   `role` enum('admin','kasir') COLLATE utf8mb4_general_ci NOT NULL,
+  `email` varchar(255) COLLATE utf8mb4_general_ci DEFAULT NULL,
   `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -173,9 +174,9 @@ CREATE TABLE `users` (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`id`, `nama`, `username`, `password`, `role`, `created_at`) VALUES
-(1, 'Pemilik Apotek', 'admin', 'admin123', 'admin', '2026-03-10 17:56:12'),
-(2, 'Kasir', 'kasir', 'kasir123', 'kasir', '2026-03-10 17:56:12');
+INSERT INTO `users` (`id`, `nama`, `username`, `password`, `role`, `email`, `created_at`) VALUES
+(1, 'Pemilik Apotek', 'admin', 'admin123', 'admin', 'admin@example.com', '2026-03-10 17:56:12'),
+(2, 'Kasir', 'kasir', 'kasir123', 'kasir', NULL, '2026-03-10 17:56:12');
 
 --
 -- Indexes for dumped tables
